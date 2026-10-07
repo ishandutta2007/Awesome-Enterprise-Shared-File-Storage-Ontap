@@ -70,7 +70,7 @@ Below is the structured comparison of enterprise shared file storage SaaS and co
 
 ## 🔓 Open-Source GitHub Projects 🛠️
 
-Below are top open-source distributed file systems, cloud-native storage orchestrators, and software-defined NAS platforms, sorted by **GitHub Star Count (Descending)**: 🌟
+Below are top open-source distributed file systems, cloud-native storage orchestrators, and software-defined NAS platforms, sorted by **GitHub Stars_Count (Descending)**: 🌟
 
 - **[MinIO](https://github.com/minio/minio)** [![Stars](https://img.shields.io/github/stars/minio/minio?style=social&color=white)](https://github.com/minio/minio/stargazers)  
   **High-performance, S3-compatible enterprise object storage**, AGPL-3.0 licensed. Designed for high-throughput cloud-native workloads, serving as an object storage foundation for distributed file systems and hybrid cloud applications. 🎯
