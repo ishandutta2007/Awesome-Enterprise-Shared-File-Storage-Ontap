@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#090d16"/>
+    </linearGradient>
+    
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#7e22ce" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <style>
+      .title { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 42px; fill: #ffffff; letter-spacing: -0.5px; }
+      .subtitle { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 20px; fill: #94a3b8; letter-spacing: 0.2px; }
+      .badge-text { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 13px; fill: #38bdf8; }
+      
+      @keyframes floatSlow {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(1deg); }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.3; }
+        50% { opacity: 0.7; }
+      }
+      @keyframes dashFlow {
+        0% { stroke-dashoffset: 40; }
+        100% { stroke-dashoffset: 0; }
+      }
+
+      .animated-bg-circle { animation: pulseGlow 6s ease-in-out infinite; }
+      .animated-card { animation: floatSlow 8s ease-in-out infinite; }
+      .flow-line { stroke-dasharray: 8 6; animation: dashFlow 3s linear infinite; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="360" rx="16" fill="url(#bg)"/>
+  
+  <!-- Dynamic Glowing Accents in Background (Behind Text) -->
+  <circle cx="200" cy="100" r="180" fill="url(#glow)" class="animated-bg-circle"/>
+  <circle cx="1000" cy="260" r="220" fill="url(#glow)" class="animated-bg-circle" style="animation-delay: -3s;"/>
+  
+  <!-- Network / Storage Grid background lines -->
+  <g opacity="0.1" stroke="#94a3b8" stroke-width="1">
+    <line x1="0" y1="90" x2="1200" y2="90"/>
+    <line x1="0" y1="180" x2="1200" y2="180"/>
+    <line x1="0" y1="270" x2="1200" y2="270"/>
+    <line x1="300" y1="0" x2="300" y2="360"/>
+    <line x1="600" y1="0" x2="600" y2="360"/>
+    <line x1="900" y1="0" x2="900" y2="360"/>
+  </g>
+
+  <!-- Dynamic Graphic Elements - Right Side (Will not obscure text) -->
+  <g class="animated-card" transform="translate(820, 50)">
+    <!-- Storage Node Card 1 -->
+    <rect x="0" y="0" width="280" height="70" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <circle cx="30" cy="35" r="14" fill="#0284c7" fill-opacity="0.2" stroke="#38bdf8" stroke-width="2"/>
+    <path d="M24 35h12M30 29v12" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+    <text x="60" y="32" font-family="sans-serif" font-weight="700" font-size="14" fill="#f8fafc">AWS FSx for NetApp ONTAP</text>
+    <text x="60" y="50" font-family="sans-serif" font-size="12" fill="#64748b">Multi-AZ Shared NAS • NFS/SMB</text>
+
+    <!-- Storage Node Card 2 -->
+    <rect x="30" y="95" width="280" height="70" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <circle cx="60" cy="130" r="14" fill="#4f46e5" fill-opacity="0.2" stroke="#818cf8" stroke-width="2"/>
+    <rect x="54" y="124" width="12" height="12" rx="2" fill="#818cf8"/>
+    <text x="90" y="127" font-family="sans-serif" font-weight="700" font-size="14" fill="#f8fafc">Azure NetApp Files &amp; GCP</text>
+    <text x="90" y="145" font-family="sans-serif" font-size="12" fill="#64748b">Sub-ms Latency • 99.99% SLA</text>
+
+    <!-- Storage Node Card 3 -->
+    <rect x="0" y="190" width="280" height="70" rx="10" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <circle cx="30" cy="225" r="14" fill="#9333ea" fill-opacity="0.2" stroke="#c084fc" stroke-width="2"/>
+    <circle cx="30" cy="225" r="6" fill="#c084fc"/>
+    <text x="60" y="222" font-family="sans-serif" font-weight="700" font-size="14" fill="#f8fafc">CephFS / MinIO / OpenZFS</text>
+    <text x="60" y="240" font-family="sans-serif" font-size="12" fill="#64748b">Open-Source Distributed NAS</text>
+
+    <!-- Animated Data Flow Line -->
+    <path d="M -40 130 Q -10 130 0 35" fill="none" stroke="#38bdf8" stroke-width="2" class="flow-line"/>
+    <path d="M -40 130 H 30" fill="none" stroke="#818cf8" stroke-width="2" class="flow-line"/>
+    <path d="M -40 130 Q -10 130 0 225" fill="none" stroke="#c084fc" stroke-width="2" class="flow-line"/>
+  </g>
+
+  <!-- Foreground Title and Subtitle Block (Left Aligned & Clear) -->
+  <g transform="translate(80, 100)">
+    <!-- Pill Category Badge -->
+    <rect x="0" y="0" width="230" height="30" rx="15" fill="#0f172a" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="115" y="19" text-anchor="middle" class="badge-text">ENTERPRISE STORAGE 2026</text>
+    
+    <!-- Main Title -->
+    <text x="0" y="75" class="title">Awesome Enterprise Shared</text>
+    <text x="0" y="125" class="title" fill="url(#accent)">File Storage (ONTAP)</text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="170" class="subtitle">Commercial NAS Platforms, Cloud File Services &amp; Open-Source Distributed NAS</text>
+  </g>
+
+  <!-- Bottom Accent Border -->
+  <rect x="0" y="354" width="1200" height="6" fill="url(#accent)"/>
+</svg>
